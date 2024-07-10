@@ -17,7 +17,6 @@ public class RotateCharacter : MonoBehaviour
     private void RotateVertical()
     {
         float mouseX = Input.GetAxis("Mouse X");
-
         float yaw = mouseX * anglePerSecond;
         transform.Rotate(0, yaw, 0);
     }
@@ -25,7 +24,7 @@ public class RotateCharacter : MonoBehaviour
     private void RotateHorizontal()
     {
         float mouseY = Input.GetAxis("Mouse Y");
-        float deltaPitch = -mouseY * anglePerSecond;
+        float deltaPitch = - mouseY * anglePerSecond;
         pitch = Mathf.Clamp(pitch + deltaPitch, minPitch, maxPitch);
         cameraHold.localEulerAngles = new Vector3(pitch, 0, 0);
     }

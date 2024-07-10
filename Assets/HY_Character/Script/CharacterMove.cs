@@ -5,7 +5,6 @@ using UnityEngine;
 public class CharacterMove : MonoBehaviour
 {
     [SerializeField] private CharacterController playerController;
-    //[SerializeField] private Transform playerObj;
     [SerializeField] private float movingSpeed;
 
     private void OnValidate() => playerController = GetComponent<CharacterController>();
@@ -14,8 +13,7 @@ public class CharacterMove : MonoBehaviour
     {
         float hInput = Input.GetAxis("Horizontal");
         float vInput = Input.GetAxis("Vertical");
-        //var direction = playerObj.position;
-        var direction  = transform.right * hInput + transform.forward * vInput;
+        Vector3 direction  = transform.right * hInput + transform.forward * vInput;
         playerController.SimpleMove(direction * movingSpeed);
     }
     void Update()
