@@ -4,18 +4,34 @@ using UnityEngine;
 
 public class RotateCharacter : MonoBehaviour
 {
-    public float anglePerSecond;
-
-    private void RotationCharacter()
+    [SerializeField] private float anglePerSecond;
+    [SerializeField] private Transform cameraHold;
+    [SerializeField] private float minPitch;
+    [SerializeField] private float maxPitch;
+    private float pitch;
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+    private void RotateVertical()
     {
         float mouseX = Input.GetAxis("Mouse X");
-        float mouseY = Input.GetAxis("Mouse Y");
 
-        float yaw = mouseX * anglePerSecond * Time.deltaTime;
+        float yaw = mouseX * anglePerSecond;
         transform.Rotate(0, yaw, 0);
+    }
+
+    private void RotateHorizontal()
+    {
+        float mouseY = Input.GetAxis("Mouse Y");
+        float deltaPitch = -mouseY * anglePerSecond;
+        pitch = Mathf.Clamp(pitch + deltaPitch, minPitch, maxPitch);
+        cameraHold.localEulerAngles = new Vector3(pitch, 0, 0);
     }
     private void Update()
     {
-        RotationCharacter();   
+        RotateVertical();
+        RotateHorizontal();
     }
 }
