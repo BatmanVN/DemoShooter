@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Boss
   - Ground
+  - FxTemporaire
+  - Wall
+  - RocketBullet
   layers:
   - Default
   - TransparentFX

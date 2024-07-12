@@ -8,8 +8,9 @@ public class ShootBullet : MonoBehaviour
     [SerializeField] private GameObject bulletprefab;
     [SerializeField] private Transform bulletPoint;
     [SerializeField] private float speedBullet;
-    //[SerializeField] private AudioSource shootingSound;
-    [SerializeField] private Animator anim;
+    [SerializeField] private AudioSource shootingSound;
+    //[SerializeField] private Rigidbody bullet;
+    //[SerializeField] private Animator anim;
 
     private void Start()
     {
@@ -27,7 +28,7 @@ public class ShootBullet : MonoBehaviour
         }
     }
 
-    private void Shootbullet() => anim.SetTrigger("Shoot");
+    private void Shootbullet() => shootingSound.Play();
     private void AddProjectile()
     {
         GameObject bullet = Instantiate(bulletprefab, bulletPoint.position, bulletPoint.rotation);

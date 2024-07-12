@@ -13,7 +13,7 @@ public class CharacterMove : MonoBehaviour
     {
         float hInput = Input.GetAxis("Horizontal");
         float vInput = Input.GetAxis("Vertical");
-        Vector3 direction  = transform.right * hInput + transform.forward * vInput;
+        Vector3 direction  = transform.right * hInput * 2 + transform.forward * vInput;
         playerController.SimpleMove(direction * movingSpeed);
     }
     void Update()
