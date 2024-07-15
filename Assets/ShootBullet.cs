@@ -9,6 +9,7 @@ public class ShootBullet : MonoBehaviour
     [SerializeField] private Transform bulletPoint;
     [SerializeField] private float speedBullet;
     [SerializeField] private AudioSource shootingSound;
+    [SerializeField] private ReloadAmmo bullet;
     //[SerializeField] private Rigidbody bullet;
     //[SerializeField] private Animator anim;
 
@@ -25,6 +26,7 @@ public class ShootBullet : MonoBehaviour
         {
             Shootbullet();
             AddProjectile();
+            bullet.WhenShoot();
         }
     }
 

@@ -9,6 +9,7 @@ TagManager:
   - FxTemporaire
   - Wall
   - RocketBullet
+  - AR_bullet
   layers:
   - Default
   - TransparentFX
