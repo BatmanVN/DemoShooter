@@ -1387,3 +1387,79 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ec7b641cbcf36944792d9291041243f6, type: 3}
   m_PrefabInstance: {fileID: 4998270500859721105}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5304120337640949952 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ec7b641cbcf36944792d9291041243f6, type: 3}
+  m_PrefabInstance: {fileID: 4998270500859721105}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3113780446094051410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5304120337640949952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 473397ea5a7ab4547833b109422c8493, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  muzzleGun: {fileID: 100006, guid: 31e92f47a14b1434397c9d18b23ef28d, type: 3}
+  duration: 0.05
+--- !u!114 &7685325008894515184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5304120337640949952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb55560f5086af42b9a7210b19bc213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rpm: 600
+  bulletprefab: {fileID: 3468828384489065644, guid: f961dc68ee1ae65418ed7b97a55f0b4a, type: 3}
+  bulletPoint: {fileID: 0}
+  speedBullet: 1000
+  bullet: {fileID: 0}
+  hitMarketPrfb: {fileID: 100002, guid: 33eec706dfcaa3146b43f2b99b1e59a0, type: 3}
+  aimingCamera: {fileID: 1623990894757514416}
+  onShoot:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3113780446094051410}
+        m_TargetAssemblyTypeName: GunPuzzle, Assembly-CSharp
+        m_MethodName: ShowMuzzle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 439
+--- !u!114 &7395675045933377920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5304120337640949952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f7d2e2588e71ea4e88255f5d1bca50f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magSize: 30
+  _loadedAmmo: 30
+  rockObj: {fileID: 311925072789175162}
+  bulletAR: {fileID: 7685325008894515184}
+  display: {fileID: 0}
+  loadedChangeAmmo:
+    m_PersistentCalls:
+      m_Calls: []

@@ -8,7 +8,9 @@ public class ReloadAmmo : MonoBehaviour
 {
     [SerializeField] private int magSize;
     [SerializeField] private int _loadedAmmo;
-    [SerializeField] private ShootBullet rockObj;
+    [SerializeField] private ShootLauncher rockObj;
+    [SerializeField] private ShootBulletAR bulletAR;
+    [SerializeField] private DisplayingAmmo display;
     public UnityEvent<int> loadedChangeAmmo;
     public int LoadedAmmoo
     {
@@ -34,17 +36,25 @@ public class ReloadAmmo : MonoBehaviour
     }
     private void UnlockShooting()
     {
-        rockObj.enabled = true;
+        bulletAR.enabled = true;
     }
     private void LockShooting()
     {
-        rockObj.enabled = false;
+        bulletAR.enabled = false;
     }
     public void WhenShoot() => LoadedAmmoo--;
     private void Reloadbullet() => LoadedAmmoo = magSize;
+    private void ReloadWithKey()
+    {
+         if(Input.GetKeyDown(KeyCode.R))
+        {
+            StartCoroutine(Delay());
+        }
+    }
     private void Update()
     {
-        
+        display.UpdateAmmo(LoadedAmmoo);
+        ReloadWithKey();
     }
     private void Start()
     {

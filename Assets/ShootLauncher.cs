@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootBullet : MonoBehaviour
+public class ShootLauncher : MonoBehaviour
 {
     private const int LeftMouseButton = 0;
     [SerializeField] private GameObject bulletprefab;
