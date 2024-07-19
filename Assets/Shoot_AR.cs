@@ -4,13 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ShootBulletAR : MonoBehaviour
+public class Shoot_AR : Shooting
 {
     [SerializeField] private int rpm;
     [SerializeField] private GameObject bulletprefab;
     [SerializeField] private Transform bulletPoint;
     [SerializeField] private float speedBullet;
-    [SerializeField] private ReloadAmmo bullet;
     [SerializeField] private GameObject hitMarketPrfb;
     [SerializeField] private Camera aimingCamera;
     [SerializeField] private UnityEvent onShoot;
@@ -31,7 +30,6 @@ public class ShootBulletAR : MonoBehaviour
         if (Input.GetMouseButtonDown(LeftMouseButton) || Input.GetMouseButton(LeftMouseButton))
         {
             AddProjectile();
-            bullet.WhenShoot();
             Shoot();
         }
     }
@@ -48,7 +46,7 @@ public class ShootBulletAR : MonoBehaviour
     }
     private void UpdateFiring()
     {
-        if(Time.time - lastShot >= interval)
+        if (Time.time - lastShot >= interval)
         {
             WhenClickShoot();
             lastShot = Time.time;
@@ -57,7 +55,7 @@ public class ShootBulletAR : MonoBehaviour
     private void PerformRayCasting()
     {
         Ray aimingRay = new Ray(aimingCamera.transform.position, aimingCamera.transform.forward);
-        if(Physics.Raycast(aimingRay, out RaycastHit hitInfo, 1000f, layerMask))
+        if (Physics.Raycast(aimingRay, out RaycastHit hitInfo, 1000f, layerMask))
         {
             Quaternion effectRotation = Quaternion.LookRotation(hitInfo.normal);
             Instantiate(hitMarketPrfb, hitInfo.point, effectRotation);

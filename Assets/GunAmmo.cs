@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ReloadAmmo : MonoBehaviour
+public class GunAmmo : MonoBehaviour
 {
     [SerializeField] private int magSize;
-    [SerializeField] private int _loadedAmmo;
-    [SerializeField] private ShootLauncher rockObj;
-    [SerializeField] private ShootBulletAR bulletAR;
+    private int _loadedAmmo;
+    [SerializeField] private Shooting gun;
     [SerializeField] private DisplayingAmmo display;
     public UnityEvent<int> loadedChangeAmmo;
     public int LoadedAmmoo
@@ -22,33 +21,33 @@ public class ReloadAmmo : MonoBehaviour
             if (_loadedAmmo <= 0)
             {
                 LockShooting();
-                StartCoroutine(Delay());
+                StartCoroutine(DelayReload());
             }
             else
                 UnlockShooting();
         }
 
     }
-    IEnumerator Delay()
+    IEnumerator DelayReload()
     {
         yield return new WaitForSeconds(3);
         Reloadbullet();
     }
     private void UnlockShooting()
     {
-        bulletAR.enabled = true;
+        gun.enabled = true;
     }
     private void LockShooting()
     {
-        bulletAR.enabled = false;
+        gun.enabled = false;
     }
     public void WhenShoot() => LoadedAmmoo--;
     private void Reloadbullet() => LoadedAmmoo = magSize;
-    private void ReloadWithKey()
+    public void ReloadWithKey()
     {
-         if(Input.GetKeyDown(KeyCode.R))
+         if(Input.GetKeyDown(KeyCode.R) && LoadedAmmoo < 30)
         {
-            StartCoroutine(Delay());
+            StartCoroutine(DelayReload());
         }
     }
     private void Update()

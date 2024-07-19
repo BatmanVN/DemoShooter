@@ -2,16 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootLauncher : MonoBehaviour
+public class ShootLauncher : Shooting
 {
     private const int LeftMouseButton = 0;
     [SerializeField] private GameObject bulletprefab;
     [SerializeField] private Transform bulletPoint;
     [SerializeField] private float speedBullet;
     [SerializeField] private AudioSource shootingSound;
-    [SerializeField] private ReloadAmmo bullet;
-    //[SerializeField] private Rigidbody bullet;
-    //[SerializeField] private Animator anim;
 
     private void Start()
     {
@@ -26,7 +23,6 @@ public class ShootLauncher : MonoBehaviour
         {
             Shootbullet();
             AddProjectile();
-            bullet.WhenShoot();
         }
     }
 
