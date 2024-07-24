@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4834431380060830830}
   m_Layer: 0
   m_Name: Bullet_AR
-  m_TagString: Untagged
+  m_TagString: AR_bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

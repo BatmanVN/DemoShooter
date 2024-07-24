@@ -22,6 +22,7 @@ public class GunAmmo : MonoBehaviour
             {
                 LockShooting();
                 StartCoroutine(DelayReload());
+
             }
             else
                 UnlockShooting();
