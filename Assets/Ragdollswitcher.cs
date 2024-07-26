@@ -44,4 +44,17 @@ public class Ragdollswitcher : MonoBehaviour
             rigbd[i].isKinematic = !ragdollEnable;
         }
     }
+    [ContextMenu("Add HitSurface")]
+    private void AddHitSurface()
+    {
+        var colliders = GetComponentsInChildren<Collider>();
+        foreach(var collider in colliders)
+        {
+            if (collider.GetComponent<HitSurface>() == null)
+            {
+                var hitSurface = collider.gameObject.AddComponent<HitSurface>();
+                hitSurface.surfaceType = HitSurfaceType.Blood;
+            }
+        }
+    }
 }

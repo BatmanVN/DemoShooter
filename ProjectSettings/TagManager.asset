@@ -10,6 +10,7 @@ TagManager:
   - Wall
   - RocketBullet
   - AR_bullet
+  - Zombie
   layers:
   - Default
   - TransparentFX

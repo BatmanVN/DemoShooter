@@ -10,10 +10,11 @@ public class Shoot_AR : Shooting
     [SerializeField] private GameObject bulletprefab;
     [SerializeField] private Transform bulletPoint;
     [SerializeField] private float speedBullet;
-    [SerializeField] private GameObject hitMarketPrfb;
+    [SerializeField] private GameObject hitPrfb;
     [SerializeField] private Camera aimingCamera;
     [SerializeField] private UnityEvent onShoot;
     [SerializeField] private LayerMask layerMask;
+    //[SerializeField] private HitEffectManager effects;
 
     private float lastShot;
     private float interval;
@@ -58,7 +59,11 @@ public class Shoot_AR : Shooting
         if (Physics.Raycast(aimingRay, out RaycastHit hitInfo, 1000f, layerMask))
         {
             Quaternion effectRotation = Quaternion.LookRotation(hitInfo.normal);
-            Instantiate(hitMarketPrfb, hitInfo.point, effectRotation);
+            Instantiate(hitPrfb, hitInfo.point, effectRotation);
         }
+    }
+    private void ShowHitEffect()
+    {
+
     }
 }
