@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Enemy_TakeDame : MonoBehaviour
 {
-    [SerializeField] private Health_enemy _health;
+    [SerializeField] private Health _health;
     [SerializeField] private Animator zomAnim;
     [SerializeField] private float takeDame;
+    [SerializeField] private Zombie_Move move;
 
     private void OnTriggerEnter(Collider enemy)
     {
@@ -17,6 +18,7 @@ public class Enemy_TakeDame : MonoBehaviour
             if (_health.Dead)
             {
                 zomAnim.SetTrigger("dead");
+                move.enabled = false;
             }
     }
     private void Start()
