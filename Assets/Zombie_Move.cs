@@ -49,6 +49,12 @@ public class Zombie_Move : MonoBehaviour
             zomNav.SetDestination(player.position);
         }
     }
+    
+    public void OnDie()
+    {
+        enabled = false;
+        zomNav.isStopped = true;
+    }
     private void Update()
     {
         Move();

@@ -6,20 +6,33 @@ using UnityEngine.Events;
 public class Health : MonoBehaviour
 {
     [SerializeField] private float maxHP;
-    [SerializeField] private float hP;
+    [SerializeField] private float _healthPoint;
     public UnityEvent onDie;
-    //public float MaxHP { get => maxHP; set => maxHP = value; }
-    //public float HP { get => hP; set => hP = value; }
+    public UnityEvent<float, float> onHealthChanged;
+    public UnityEvent onTakeDame;
 
-    public bool Dead => hP <= 0;
+    public bool Dead => _healthPoint <= 0;
+
+
+    public float HealthPoint
+    { 
+        get => _healthPoint; 
+        set
+        {
+            _healthPoint = value;
+            onHealthChanged?.Invoke(_healthPoint, maxHP);
+        }
+    }
+
     private void Start()
     {
-        hP = maxHP;
+        HealthPoint = maxHP;
     }
     public void TakeDame(float dame)
     {
         if(Dead) return;
-         hP -= dame;
+        HealthPoint -= dame;
+        onTakeDame?.Invoke();
         if(Dead)
         {
             Die();
