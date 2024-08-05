@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class LoseGame : MonoBehaviour
 {
-    public void WhenDie()
+    [SerializeField] private GameObject GameUI;
+
+    public void ShowLoseUI()
     {
         Time.timeScale = 0;
-        Debug.Log("LOSER");
+        GameUI.SetActive(true);
     }
 }
