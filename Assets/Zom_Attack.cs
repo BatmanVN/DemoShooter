@@ -8,7 +8,11 @@ public class Zom_Attack : MonoBehaviour
     public float dame;
     public Health playerhealth;
 
-    public void StartAttack() => anim.SetBool("attack", true);
+    public void StartAttack()
+    {
+        playerhealth = Player.Instance.playerHealth;
+        anim.SetBool("attack", true);
+    }
     public void StopAttack() => anim.SetBool("attack", false);
     public void OnAttack(int index)
     {

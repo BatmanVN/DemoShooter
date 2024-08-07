@@ -11,4 +11,9 @@ public class LoseGame : MonoBehaviour
         Time.timeScale = 0;
         GameUI.SetActive(true);
     }
+    public void EnableMouse()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
 }

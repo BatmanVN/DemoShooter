@@ -35,4 +35,5 @@ public class AsynSceneLoader : MonoBehaviour
         Time.timeScale = 1;
         Destroy(gameObject);
     }
+
 }
