@@ -7,12 +7,13 @@ public class DisplayingAmmo : MonoBehaviour
 {
     [SerializeField] private Text showAmmo;
     [SerializeField] private GunAmmo bullet;
-    public void UpdateAmmo(int ammo)
+    public void UpdateAmmo()
     {
-        showAmmo.text = ammo.ToString();
+        showAmmo.text = bullet.LoadedAmmoo.ToString();
     }
     private void Start()
     {
         bullet.loadedChangeAmmo.AddListener(UpdateAmmo);
+        UpdateAmmo();
     }
 }

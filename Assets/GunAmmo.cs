@@ -10,14 +10,14 @@ public class GunAmmo : MonoBehaviour
     private int _loadedAmmo;
     [SerializeField] private Shooting gun;
     [SerializeField] private DisplayingAmmo display;
-    public UnityEvent<int> loadedChangeAmmo;
+    public UnityEvent loadedChangeAmmo;
     public int LoadedAmmoo
     {
         get => _loadedAmmo;
         set
         {
             _loadedAmmo = value;
-            loadedChangeAmmo?.Invoke(LoadedAmmoo);
+            loadedChangeAmmo?.Invoke();
             if (_loadedAmmo <= 0)
             {
                 LockShooting();
@@ -53,7 +53,6 @@ public class GunAmmo : MonoBehaviour
     }
     private void Update()
     {
-        display.UpdateAmmo(LoadedAmmoo);
         ReloadWithKey();
     }
     private void Start()

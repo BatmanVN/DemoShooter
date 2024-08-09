@@ -1,28 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+//using System.Collections;
+//using System.Collections.Generic;
+//using UnityEngine;
 
-public class Enemy_TakeDame : MonoBehaviour
-{
-    [SerializeField] private Health _health;
-    [SerializeField] private Animator zomAnim;
-    [SerializeField] private float takeDame;
-    [SerializeField] private Zombie_Move move;
+//public class Enemy_TakeDame : MonoBehaviour
+//{
+//    [SerializeField] private Health _health;
+//    [SerializeField] private float takeDame;
+//    public Camera aimingCamera;
+//    public LayerMask layerMask;
 
-    private void OnTriggerEnter(Collider enemy)
-    {
-            if (enemy.CompareTag("AR_bullet"))
-            {
-                _health.TakeDame(takeDame);
-            }
-            if (_health.Dead)
-            {
-                zomAnim.SetTrigger("dead");
-                move.enabled = false;
-            }
-    }
-    private void Start()
-    {
+//    public void PerformRaycasting()
+//    {
+//        Ray aimingRay = new Ray(aimingCamera.transform.position, aimingCamera.transform.forward);
+//        if(Physics.Raycast(aimingRay,out RaycastHit hitInfo),1000f)
+//    }
 
-    }
-}
+//    private void DeliverDamage(RaycastHit hitInfo)
+//    {
+//        Health health = hitInfo.collider.GetComponent<Health>();
+//            if(health != null)
+//        {
+//            health.TakeDame(takeDame);
+//        }
+//    }
+//}

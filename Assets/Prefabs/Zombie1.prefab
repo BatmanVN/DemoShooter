@@ -410,10 +410,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3754756943346384145}
-  - component: {fileID: 2229017424377897384}
-  - component: {fileID: 2229017424377897391}
-  - component: {fileID: 2229017424377897388}
-  - component: {fileID: 3754756943346384144}
   m_Layer: 0
   m_Name: Base HumanPelvis
   m_TagString: Untagged
@@ -439,64 +435,6 @@ Transform:
   m_Father: {fileID: 1651063878284821930}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &2229017424377897384
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 546052543626455252}
-  serializedVersion: 2
-  m_Mass: 3.125
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!65 &2229017424377897391
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 546052543626455252}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.27080226, y: 0.28194928, z: 0.3551271}
-  m_Center: {x: -0.13540113, y: 0.00311023, z: -0.00000017881393}
---- !u!114 &2229017424377897388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 546052543626455252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5589a26a26612d45a58185dd7b6f018, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  surfaceType: 1
---- !u!114 &3754756943346384144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 546052543626455252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9a05625e628a9499de6595bd1307db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _health: {fileID: 2314592163209865521}
-  zomAnim: {fileID: 8674990719082031312}
-  takeDame: 2
-  move: {fileID: 5979007956474661852}
 --- !u!1 &676976758573667095
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,7 +508,7 @@ CharacterJoint:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 676976758573667095}
-  m_ConnectedBody: {fileID: 2229017424377897384}
+  m_ConnectedBody: {fileID: 0}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
@@ -852,7 +790,7 @@ CharacterJoint:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 834269537077953182}
-  m_ConnectedBody: {fileID: 2229017424377897384}
+  m_ConnectedBody: {fileID: 0}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
@@ -1686,6 +1624,9 @@ GameObject:
   - component: {fileID: 3436277073012216324}
   - component: {fileID: 5979007956474661852}
   - component: {fileID: 8674990719082031319}
+  - component: {fileID: 3271867436934301822}
+  - component: {fileID: 817615145828684565}
+  - component: {fileID: 2269847064337726979}
   m_Layer: 0
   m_Name: Zombie1
   m_TagString: Zombie
@@ -1759,7 +1700,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zomAnim: {fileID: 8674990719082031312}
   rigbd:
-  - {fileID: 2229017424377897384}
+  - {fileID: 0}
   - {fileID: 2229017425060633669}
   - {fileID: 2229017425678794311}
   - {fileID: 2229017424660020285}
@@ -1809,18 +1750,6 @@ MonoBehaviour:
   onDie:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5979007956474661852}
-        m_TargetAssemblyTypeName: Zombie_Move, Assembly-CSharp
-        m_MethodName: OnDie
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 2988660216517021615}
         m_TargetAssemblyTypeName: Ragdollswitcher, Assembly-CSharp
         m_MethodName: EnableRagDoll
@@ -1926,6 +1855,49 @@ MonoBehaviour:
   anim: {fileID: 8674990719082031312}
   dame: 1
   playerhealth: {fileID: 0}
+--- !u!114 &3271867436934301822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2356112687566665657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5589a26a26612d45a58185dd7b6f018, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  surfaceType: 1
+--- !u!54 &817615145828684565
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2356112687566665657}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!136 &2269847064337726979
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2356112687566665657}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.25141445
+  m_Height: 1.9086936
+  m_Direction: 1
+  m_Center: {x: 0.07063529, y: 0.87669694, z: 0}
 --- !u!1 &2490103233333295787
 GameObject:
   m_ObjectHideFlags: 0
@@ -4467,7 +4439,7 @@ CharacterJoint:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8730358449108463444}
-  m_ConnectedBody: {fileID: 2229017424377897384}
+  m_ConnectedBody: {fileID: 0}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
