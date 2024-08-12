@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private float maxHP;
     [SerializeField] private float _healthPoint;
+    public Animator anim;
     public UnityEvent onDie;
     public UnityEvent<float, float> onHealthChanged;
     public UnityEvent onTakeDame;
@@ -40,6 +41,7 @@ public class Health : MonoBehaviour
     }
     protected virtual void Die()
     {
+        anim.SetTrigger("dead");
         onDie.Invoke();
     }
 }

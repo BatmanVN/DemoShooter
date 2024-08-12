@@ -1625,8 +1625,6 @@ GameObject:
   - component: {fileID: 5979007956474661852}
   - component: {fileID: 8674990719082031319}
   - component: {fileID: 3271867436934301822}
-  - component: {fileID: 817615145828684565}
-  - component: {fileID: 2269847064337726979}
   m_Layer: 0
   m_Name: Zombie1
   m_TagString: Zombie
@@ -1700,7 +1698,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zomAnim: {fileID: 8674990719082031312}
   rigbd:
-  - {fileID: 0}
   - {fileID: 2229017425060633669}
   - {fileID: 2229017425678794311}
   - {fileID: 2229017424660020285}
@@ -1747,6 +1744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 10
   _healthPoint: 0
+  anim: {fileID: 8674990719082031312}
   onDie:
     m_PersistentCalls:
       m_Calls:
@@ -1868,36 +1866,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surfaceType: 1
---- !u!54 &817615145828684565
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2356112687566665657}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!136 &2269847064337726979
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2356112687566665657}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.25141445
-  m_Height: 1.9086936
-  m_Direction: 1
-  m_Center: {x: 0.07063529, y: 0.87669694, z: 0}
 --- !u!1 &2490103233333295787
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@
 
 public class GunRayCaster : MonoBehaviour
 {
+    [SerializeField] private GameObject hitMarkerPrefab;
     [SerializeField] private Camera aimingCamera;
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private float takeDame;
@@ -16,7 +17,7 @@ public class GunRayCaster : MonoBehaviour
     }
     private void DeliverDamage(RaycastHit hitInfo)
     {
-        Health health = hitInfo.collider.GetComponent<Health>();
+        Health health = hitInfo.collider.GetComponentInParent<Health>();
         if (health != null)
         {
             health.TakeDame(takeDame);

@@ -35,6 +35,7 @@ public class Ragdollswitcher : MonoBehaviour
     }
     [ContextMenu("Enable RagDoll")]
     public void EnableRagDoll() => SetRagDoll(true);
+    [ContextMenu("Disable RagDoll")]
     public void DisableRagDoll() => SetRagDoll(false);
     private void SetRagDoll(bool ragdollEnable)
     {
