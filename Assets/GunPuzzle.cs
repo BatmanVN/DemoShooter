@@ -7,7 +7,6 @@ public class GunPuzzle : MonoBehaviour
 {
     [SerializeField] private GameObject muzzleGun;
     [SerializeField] private Transform point;
-    //[SerializeField] private float duration;
 
     public void ShowMuzzle()
     {

@@ -13,14 +13,18 @@ public class GunRayCaster : MonoBehaviour
         {
             ShowHitEffect(hitInfo);
             DeliverDamage(hitInfo);
+            Debug.Log("chay chua");
         }
     }
     private void DeliverDamage(RaycastHit hitInfo)
     {
         Health health = hitInfo.collider.GetComponentInParent<Health>();
+        Debug.Log(hitInfo);
         if (health != null)
         {
             health.TakeDame(takeDame);
+            Debug.Log($"HP cua: {health.gameObject.name}");
+            Debug.Log(takeDame);
         }
     }
     private void ShowHitEffect(RaycastHit hitInfo)
@@ -33,6 +37,7 @@ public class GunRayCaster : MonoBehaviour
             {
                 Quaternion effectRotation = Quaternion.LookRotation(hitInfo.normal);
                 Instantiate(effectPrefab, hitInfo.point, effectRotation);
+
             }
         }
     }

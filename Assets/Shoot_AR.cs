@@ -10,6 +10,7 @@ public class Shoot_AR : Shooting
     [SerializeField] private GameObject bulletprefab;
     [SerializeField] private Transform bulletPoint;
     [SerializeField] private float speedBullet;
+    [SerializeField] private GunRayCaster raycast;
     [SerializeField] private UnityEvent onShoot;
 
     private float lastShot;
@@ -20,31 +21,32 @@ public class Shoot_AR : Shooting
 
     private void Update()
     {
-        UpdateFiring();
+        WhenClickShoot();
     }
     private void WhenClickShoot()
     {
-        if (Input.GetMouseButtonDown(LeftMouseButton) || Input.GetMouseButton(LeftMouseButton))
+        if (Input.GetMouseButtonDown(LeftMouseButton)/* || Input.GetMouseButton(LeftMouseButton)*/)
         {
-            Shoot();
+            UpdateFiring();
         }
     }
 
-    private void AddProjectile()
-    {
-        GameObject bullet = Instantiate(bulletprefab, bulletPoint.position, bulletPoint.rotation);
-        bullet.GetComponent<Rigidbody>().velocity = bulletPoint.forward * speedBullet;
-    }
+    //private void AddProjectile()
+    //{
+    //    GameObject bullet = Instantiate(bulletprefab, bulletPoint.position, bulletPoint.rotation);
+    //    bullet.GetComponent<Rigidbody>().velocity = bulletPoint.forward * speedBullet;
+    //}
     private void Shoot()
     {
-        AddProjectile();
+        //AddProjectile();
+        raycast.PerformRayCasting();
         onShoot.Invoke();
     }
     private void UpdateFiring()
     {
         if (Time.time - lastShot >= interval)
         {
-            WhenClickShoot();
+            Shoot();
             lastShot = Time.time;
         }
     }

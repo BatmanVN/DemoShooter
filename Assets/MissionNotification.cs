@@ -12,14 +12,14 @@ public class MissionNotification : Singleton<MissionNotification>
 
     private void Start()
     {
-        StartCoroutine(ShowMisson());
+        StartCoroutine(VerifyMissions());
     }
-    private IEnumerator ShowMisson()
+    private IEnumerator VerifyMissions()
     {
-        yield return RequiredMission();
+        yield return VerifyZombieKill();
         uiGame.ShowWinUI();
     }
-    private IEnumerator RequiredMission()
+    private IEnumerator VerifyZombieKill()
     {
         currentKill = 0;
         textMission.text = $"Kill {currentKill}" +"/"+ $"{requiredKill} Zombie";

@@ -22,7 +22,7 @@ public class ZombieSpawner : MonoBehaviour
 
     private IEnumerator SpawnZombieByTime()
     {
-        if(spawnQuality > 0)
+        while(spawnQuality > 0)
         {
             SpawnZombie();
             yield return new WaitForSeconds(spawnInterval);

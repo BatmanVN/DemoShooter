@@ -32,6 +32,7 @@ public class Health : MonoBehaviour
     public void TakeDame(float dame)
     {
         if(Dead) return;
+
         HealthPoint -= dame;
         onTakeDame?.Invoke();
         if(Dead)
@@ -41,7 +42,6 @@ public class Health : MonoBehaviour
     }
     protected virtual void Die()
     {
-        anim.SetTrigger("dead");
         onDie.Invoke();
     }
 }
