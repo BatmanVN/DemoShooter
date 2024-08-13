@@ -13755,7 +13755,7 @@ MonoBehaviour:
   aimingCamera: {fileID: 1623990894619854556}
   layerMask:
     serializedVersion: 2
-    m_Bits: 311
+    m_Bits: 257
   takeDame: 4
 --- !u!95 &7395675045799977966
 Animator:
