@@ -25,6 +25,8 @@ public class MissionNotification : Singleton<MissionNotification>
         textMission.text = $"Kill {currentKill}" +"/"+ $"{requiredKill} Zombie";
         yield return new WaitUntil(() => currentKill >= requiredKill); 
     }
+
+
     public void OnKilledZombie(GameObject zombie)
     {
         currentKill++;

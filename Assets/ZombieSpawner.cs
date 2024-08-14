@@ -28,9 +28,9 @@ public class ZombieSpawner : MonoBehaviour
             yield return new WaitForSeconds(spawnInterval);
         }
     }
-    private void OnDrawGizmos()
-    {
-        Color spawnColor = Color.black;
-        Gizmos.DrawSphere(transform.position, 0.4f);
-    }
+    //private void OnDrawGizmos()
+    //{
+    //    Color spawnColor = Color.black;
+    //    Gizmos.DrawSphere(transform.position, 0.4f);
+    //}
 }

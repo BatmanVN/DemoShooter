@@ -17,6 +17,7 @@ public class AutoFade : MonoBehaviour
         startTime = Time.time;
         group.alpha = 1f;
         gameObject.SetActive(true);
+        Debug.Log("RUN");
     }
 
     private void TimeCalculate()

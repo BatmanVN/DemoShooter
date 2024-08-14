@@ -5,7 +5,7 @@ using UnityEngine;
 public class Zom_Attack : MonoBehaviour
 {
     public Animator anim;
-    public float dame;
+    public int dame;
     public Health playerhealth;
 
     public void StartAttack()

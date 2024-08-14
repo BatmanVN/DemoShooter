@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33362116784521260}
   - component: {fileID: 23365932356910138}
   - component: {fileID: 64661513300649428}
+  - component: {fileID: 3820540283650257990}
   m_Layer: 0
   m_Name: PTK_Tunnel_Large
   m_TagString: Untagged
@@ -98,3 +99,16 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 2113dea347164f748b9c48514e713cee, type: 3}
+--- !u!65 &3820540283650257990
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1093894043927592}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9999999, y: 1.9999998, z: 0.99999994}
+  m_Center: {x: 0, y: 0.9999999, z: -0.000000029802322}

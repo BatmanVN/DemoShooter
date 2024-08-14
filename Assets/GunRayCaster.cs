@@ -13,13 +13,12 @@ public class GunRayCaster : MonoBehaviour
         {
             ShowHitEffect(hitInfo);
             DeliverDamage(hitInfo);
-            Debug.Log("chay chua");
         }
     }
     private void DeliverDamage(RaycastHit hitInfo)
     {
         Health health = hitInfo.collider.GetComponentInParent<Health>();
-        Debug.Log(hitInfo);
+        Debug.Log("Hit gi:" + hitInfo.collider.gameObject.name);
         if (health != null)
         {
             health.TakeDame(takeDame);
@@ -40,5 +39,9 @@ public class GunRayCaster : MonoBehaviour
 
             }
         }
+    }
+    private void Update()
+    {
+
     }
 }
