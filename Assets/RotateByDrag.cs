@@ -24,7 +24,7 @@ public class RotateByDrag : MonoBehaviour , IPointerDownHandler, IDragHandler, I
     private Quaternion desiredPlayerRotation;
     private Quaternion desiredCameraRotation;
 
-#if UNITY_ANDROID
+//#if UNITY_ANDROID
     public void OnPointerDown(PointerEventData eventData)
     {
         startPos = eventData.position - startPos;
@@ -66,5 +66,5 @@ public class RotateByDrag : MonoBehaviour , IPointerDownHandler, IDragHandler, I
         }
     }
 
-#endif
+//#endif
 }

@@ -7,9 +7,16 @@ public class Zom_Attack : MonoBehaviour
     public Animator anim;
     public int dame;
     public Health playerhealth;
+    public Transform player;
 
+
+    private void Start()
+    {
+        player = Player.Instance.playerFoot;
+    }
     public void StartAttack()
     {
+        transform.LookAt(player);
         playerhealth = Player.Instance.playerHealth;
         anim.SetBool("attack", true);
     }

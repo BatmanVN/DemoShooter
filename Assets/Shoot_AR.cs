@@ -15,30 +15,30 @@ public class Shoot_AR : Shooting
 
     private float lastShot;
     private float interval;
+    private bool isShooting;
 
     private void Start() => interval = 60f / rpm;
-    private const int LeftMouseButton = 0;
+    //private const int LeftMouseButton = 0;
 
     private void Update()
     {
-        WhenClickShoot();
-    }
-    private void WhenClickShoot()
-    {
-        if (Input.GetMouseButtonDown(LeftMouseButton)/* || Input.GetMouseButton(LeftMouseButton)*/)
+        if (isShooting == true)
         {
             UpdateFiring();
         }
     }
-
-    //private void AddProjectile()
+    public void StartShooting() => isShooting = true;
+    public void StopShooting() => isShooting = false;
+    //private void WhenClickShoot()
     //{
-    //    GameObject bullet = Instantiate(bulletprefab, bulletPoint.position, bulletPoint.rotation);
-    //    bullet.GetComponent<Rigidbody>().velocity = bulletPoint.forward * speedBullet;
+    //    if (Input.GetMouseButtonDown(LeftMouseButton))
+    //    {
+    //        UpdateFiring();
+    //    }
     //}
+
     private void Shoot()
     {
-        //AddProjectile();
         raycast.PerformRayCasting();
         onShoot.Invoke();
     }

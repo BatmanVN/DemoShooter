@@ -29,31 +29,26 @@ public class GunAmmo : MonoBehaviour
         }
 
     }
-    IEnumerator DelayReload()
+    private IEnumerator DelayReload()
     {
         yield return new WaitForSeconds(3);
         Reloadbullet();
     }
-    private void UnlockShooting()
-    {
-        gun.enabled = true;
-    }
-    private void LockShooting()
-    {
-        gun.enabled = false;
-    }
+    private void UnlockShooting() => gun.IsLockedValue = true;
+    private void LockShooting() => gun.IsLockedValue = false;
     public void WhenShoot() => LoadedAmmoo--;
-    private void Reloadbullet() => LoadedAmmoo = magSize;
-    public void ReloadWithKey()
-    {
-         if(Input.GetKeyDown(KeyCode.R) && LoadedAmmoo < 30)
-        {
-            StartCoroutine(DelayReload());
-        }
-    }
+    public void Reloadbullet() => LoadedAmmoo = magSize;
+
+    //public void ReloadWithKey()
+    //{
+    //     if(Input.GetKeyDown(KeyCode.R) && LoadedAmmoo < 30)
+    //    {
+    //        StartCoroutine(DelayReload());
+    //    }
+    //}
     private void Update()
     {
-        ReloadWithKey();
+        //ReloadWithKey();
     }
     private void Start()
     {
