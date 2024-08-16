@@ -12,6 +12,7 @@ TagManager:
   - AR_bullet
   - Zombie
   - Mission
+  - Gate
   layers:
   - Default
   - TransparentFX

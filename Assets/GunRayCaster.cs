@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class GunRayCaster : MonoBehaviour
+public partial class GunRayCaster : MonoBehaviour
 {
     [SerializeField] private GameObject hitMarkerPrefab;
     [SerializeField] private Camera aimingCamera;

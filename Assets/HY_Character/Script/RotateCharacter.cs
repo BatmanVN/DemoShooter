@@ -9,10 +9,11 @@ public class RotateCharacter : MonoBehaviour
     [SerializeField] private float minPitch;
     [SerializeField] private float maxPitch;
     private float pitch;
+#if UNITY_EDITOR || UNITY_STANDALONE
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
     }
     private void RotateVertical()
     {
@@ -33,4 +34,5 @@ public class RotateCharacter : MonoBehaviour
         RotateVertical();
         RotateHorizontal();
     }
+#endif
 }
