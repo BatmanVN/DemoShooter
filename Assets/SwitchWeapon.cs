@@ -1,18 +1,33 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SwitchWeapon : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject[] guns;
+    public GameObject[] ammoBar;
+    public GameObject[] shootButton;
+    private int currentIndex;
+
+    public void SwitchGun()
     {
-        
+        currentIndex = (currentIndex + 1) % guns.Length;
+        SetActiveGun(currentIndex);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void SetActiveGun(int gunIndex)
     {
-        
+        for(int i = 0; i < guns.Length; i++)
+        {
+            bool isActive = (i == gunIndex);
+            guns[i].SetActive(isActive);
+            ammoBar[i].SetActive(isActive);
+            shootButton[i].SetActive(isActive);
+            if(isActive)
+            {
+                guns[i].SendMessage("OnGunSelected", SendMessageOptions.DontRequireReceiver);
+            }
+        }
     }
 }

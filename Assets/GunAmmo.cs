@@ -9,7 +9,6 @@ public class GunAmmo : MonoBehaviour
     [SerializeField] private int magSize;
     private int _loadedAmmo;
     [SerializeField] private Shooting gun;
-    [SerializeField] private DisplayingAmmo display;
     public UnityEvent loadedChangeAmmo;
     public int LoadedAmmoo
     {
@@ -31,11 +30,11 @@ public class GunAmmo : MonoBehaviour
     }
     private IEnumerator DelayReload()
     {
-        yield return new WaitForSeconds(3);
-        Reloadbullet();
+            yield return new WaitForSeconds(3);
+            Reloadbullet();
     }
-    private void UnlockShooting() => gun.IsLockedValue = true;
-    private void LockShooting() => gun.IsLockedValue = false;
+    private void UnlockShooting() => gun.IsLockedValue = false;
+    private void LockShooting() => gun.IsLockedValue = true;
     public void WhenShoot() => LoadedAmmoo--;
     public void Reloadbullet() => LoadedAmmoo = magSize;
 

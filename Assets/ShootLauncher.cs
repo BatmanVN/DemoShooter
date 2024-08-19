@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ShootLauncher : Shooting
 {
@@ -9,21 +10,24 @@ public class ShootLauncher : Shooting
     [SerializeField] private Transform bulletPoint;
     [SerializeField] private float speedBullet;
     [SerializeField] private AudioSource shootingSound;
+    public UnityEvent onShoot;
 
     private void Start()
     {
     }
-    private void Update()
+    //private void Update()
+    //{
+    //    WhenShoot();
+    //}
+    public void Shoot()
     {
-        WhenShoot();
-    }
-    private void WhenShoot()
-    {
-        if (Input.GetMouseButtonDown(LeftMouseButton))
-        {
+        //if (Input.GetMouseButtonDown(LeftMouseButton))
+        //{
+        if(!IsLockedValue)
             Shootbullet();
             AddProjectile();
-        }
+            onShoot?.Invoke();
+        //}
     }
 
     private void Shootbullet() => shootingSound.Play();
